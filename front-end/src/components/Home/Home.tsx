@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
                 </div>
                 <div className="content">
                     <h1>Welcome to the Home Page</h1>
-                    <p>This is a simple home page with a centered navbar, responsive layout, and user details sidebar.</p>
+                    <p>This is a home page </p>
                 </div>
             </div>
         </div>
