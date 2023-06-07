@@ -8,9 +8,10 @@
 .login-container {
   max-width: 300px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 40px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 300px;
 }
 
 .login-container h1 {
@@ -46,4 +47,11 @@
 
 .login-container button:hover {
   background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f8d7da;
 }

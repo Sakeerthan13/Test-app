@@ -1,42 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginScreen.css';
+import { useNavigate } from 'react-router-dom';
 
-interface LoginFormState {
+interface User {
     email: string;
     password: string;
 }
 
+interface ErrorProps {
+    message: string;
+}
+
+const Error: React.FC<ErrorProps> = ({ message }) => {
+    return <div className="error">{message}</div>;
+};
+
 const LoginScreen: React.FC = () => {
-    const [formData, setFormData] = useState<LoginFormState>({
+    const [user, setUser] = useState<User>({
         email: '',
         password: '',
     });
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [error, setError] = useState('');
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Check if user is already logged in
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            const parsedUser = JSON.parse(storedUser);
+            setUser(parsedUser);
+            setLoggedIn(true);
+        }
+    }, []);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
-        setFormData((prevState) => ({
+        setUser((prevState) => ({
             ...prevState,
             [name]: value,
         }));
     };
 
-    const handleFormSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        console.log('Login form submitted:', formData);
-        // Add your login logic here
+    const handleLogin = () => {
+        if (user.email === 'sakeerthan@gmail.com' && user.password === 'Sakeer123') {
+            setLoggedIn(true);
+            localStorage.setItem('user', JSON.stringify(user));
+            setError('');
+        } else {
+            setError('Invalid credentials');
+        }
     };
+
+    if (isLoggedIn) {
+        navigate('/home');
+    }
 
     return (
         <div className="login-screen">
             <div className="login-container">
+                {error && <Error message={error} />}
                 <h1>Login</h1>
-                <form onSubmit={handleFormSubmit}>
+                <form onSubmit={handleLogin}>
                     <div>
                         <label>Email:</label>
                         <input
                             type="email"
                             name="email"
-                            value={formData.email}
+                            value={user.email}
                             onChange={handleInputChange}
                             required
                         />
@@ -46,7 +78,7 @@ const LoginScreen: React.FC = () => {
                         <input
                             type="password"
                             name="password"
-                            value={formData.password}
+                            value={user.password}
                             onChange={handleInputChange}
                             required
                         />
