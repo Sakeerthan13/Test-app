@@ -4,6 +4,7 @@ import Login from './components/Login/Login'
 import HomePage from './components/Home/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FileUpload from './components/FileUpload/FileUpload';
+import FormPage from './components/Form/Form';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -23,6 +24,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={isAuthenticated ? <HomePage /> : <Login />} />
         <Route path="/fileUpload" element={isAuthenticated ? <FileUpload /> : <Login />} />
+        <Route path="/form" element={isAuthenticated ? <FormPage /> : <Login />} />
+
       </Routes>
     </Router>
   );

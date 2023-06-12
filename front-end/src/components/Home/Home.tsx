@@ -21,6 +21,9 @@ const HomePage: React.FC = () => {
                         <li>
                             <a href="/fileUpload">File Upload</a>
                         </li>
+                        <li>
+                            <a href="/form">Form</a>
+                        </li>
 
                         <li className="logout">
                             <button onClick={handleLogout}>Logout</button>
