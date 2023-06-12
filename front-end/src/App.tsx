@@ -12,8 +12,6 @@ function App() {
     // Check if user is already logged in
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
-      const parsedUser = JSON.parse(storedUser);
-      setIsAuthenticated(parsedUser);
       setIsAuthenticated(true);
     }
   }, []);
@@ -23,8 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/fileUpload" element={<FileUpload />} />
+        <Route path="/home" element={isAuthenticated ? <HomePage /> : <Login />} />
+        <Route path="/fileUpload" element={isAuthenticated ? <FileUpload /> : <Login />} />
       </Routes>
     </Router>
   );

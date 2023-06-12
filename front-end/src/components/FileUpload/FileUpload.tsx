@@ -130,6 +130,7 @@ const FileUpload: React.FC = () => {
                         }
                         return (
                             <a
+                                key={fileIndex}
                                 className="file"
                                 target="_blank"
                                 href={"http://localhost:4000/uploads/" + file.finalFilename} rel="noreferrer"
