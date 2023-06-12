@@ -43,7 +43,8 @@ const LoginScreen: React.FC = () => {
         }));
     };
 
-    const handleLogin = () => {
+    const handleLogin = (event: React.FormEvent) => {
+        event.preventDefault();
         if (user.email === 'sakeerthan@gmail.com' && user.password === 'Sakeer123') {
             setLoggedIn(true);
             localStorage.setItem('user', JSON.stringify(user));

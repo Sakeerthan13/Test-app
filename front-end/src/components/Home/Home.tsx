@@ -16,17 +16,12 @@ const HomePage: React.FC = () => {
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">Home</a>
+                            <a href="/home">Home</a>
                         </li>
                         <li>
-                            <a href="#">About</a>
+                            <a href="/fileUpload">File Upload</a>
                         </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
+
                         <li className="logout">
                             <button onClick={handleLogout}>Logout</button>
                         </li>
