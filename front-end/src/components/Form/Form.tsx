@@ -55,16 +55,10 @@ const FormPage: React.FC = () => {
         gender: Yup.string().required("Required"),
 
 
-        // address: Yup.string().min(3, "Minimum characters should be 3").required("Required"),
-        // contactNo: Yup.string().matches(contactRegExp, "Enter valid contact No").required("Required"),
-        // password: Yup.string().min(8, "Minimum characters should be 8")
-        //     .matches(passwordRegExp, "Password must have one upper, lower case, number").required('Required'),
-        // confirmPassword: Yup.string().oneOf([Yup.ref('password')], "Password not matches").required('Required')
+
     })
 
-    // const onSubmit = (data: FormData) => {
-    //     console.log(data);
-    // };
+
     const onSubmit = async (values: any, actions: { resetForm: () => void; }) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
