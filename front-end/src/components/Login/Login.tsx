@@ -12,7 +12,7 @@ interface ErrorProps {
 }
 
 const Error: React.FC<ErrorProps> = ({ message }) => {
-    return <div className="error">{message}</div>;
+    return <div className="login-error">{message}</div>;
 };
 
 const LoginScreen: React.FC = () => {

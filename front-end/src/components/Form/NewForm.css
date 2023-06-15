@@ -1,35 +1,14 @@
-/* .body {
+.body {
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .error {
-  color: #fc8181;
+  color: red;
+  background: none;
   font-size: 0.75rem;
   text-align: left;
   margin-top: 0.25rem;
-}
-
-.checkbox {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-nav h3 {
-  margin: 1rem;
-  cursor: pointer;
-  color: #718096;
-}
-nav h3:hover {
-  color: white;
 }
 
 form {
@@ -90,7 +69,7 @@ button {
 
 input.input-error,
 select.input-error {
-  border-color: #fc8181;
+  border-color: red;
 }
 
 button:disabled {
@@ -124,5 +103,5 @@ button:disabled {
 
 .disabled {
   opacity: 0.5; /* or any other styling */
-/* pointer-events: none;
-} */
+  pointer-events: none;
+}

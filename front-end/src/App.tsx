@@ -5,6 +5,8 @@ import HomePage from './components/Home/Home';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FileUpload from './components/FileUpload/FileUpload';
 import FormPage from './components/Form/Form';
+import NewForm from './components/Form/NewForm';
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -24,7 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={isAuthenticated ? <HomePage /> : <Login />} />
         <Route path="/fileUpload" element={isAuthenticated ? <FileUpload /> : <Login />} />
-        <Route path="/form" element={isAuthenticated ? <FormPage /> : <Login />} />
+        <Route path="/form" element={isAuthenticated ? <NewForm /> : <Login />} />
 
       </Routes>
     </Router>
