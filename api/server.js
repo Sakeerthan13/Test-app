@@ -32,7 +32,5 @@ app.post('/upload', (req, res) => {
   } else {
     res.json('ok');
   }
-  console.log('hello');
 });
-console.log('hell');
 app.listen(4000);

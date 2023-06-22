@@ -56,6 +56,7 @@ const FileUpload: React.FC = () => {
                     setCurrentChunkIndex(null);
                 } else {
                     setCurrentChunkIndex((currentChunkIndex ?? 0) + 1);
+
                 }
             });
     }
@@ -67,9 +68,11 @@ const FileUpload: React.FC = () => {
         const isLastFile = lastUploadedFileIndex === files.length - 1;
         const nextFileIndex = isLastFile ? null : (currentFileIndex ?? 0) + 1;
         setCurrentFileIndex(nextFileIndex);
-    }, [currentFileIndex]);
+
+    }, [lastUploadedFileIndex]);
 
     useEffect(() => {
+
         if (files.length > 0) {
             if (currentFileIndex === null) {
                 setCurrentFileIndex(
@@ -88,10 +91,9 @@ const FileUpload: React.FC = () => {
     useEffect(() => {
         if (currentChunkIndex !== null) {
             readAndUploadCurrentChunk();
+
         }
     }, [currentChunkIndex]);
-
-
 
 
     return (
