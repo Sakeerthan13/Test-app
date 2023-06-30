@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FileUpload from './components/FileUpload/FileUpload';
 import FormPage from './components/Form/Form';
 import NewForm from './components/Form/NewForm';
+import ImageUploadJS from './components/ImageUpload/UploadImage';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/home" element={isAuthenticated ? <HomePage /> : <Login />} />
         <Route path="/fileUpload" element={isAuthenticated ? <FileUpload /> : <Login />} />
         <Route path="/form" element={isAuthenticated ? <NewForm /> : <Login />} />
+        <Route path="/ImageUpload" element={isAuthenticated ? <ImageUploadJS /> : <Login />} />
 
       </Routes>
     </Router>
